@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dessert</title>
+    <link rel="stylesheet" href="css/dessert.css" />
+  </head>
+  <body>
+    <div id="dessertquestion">Which dessert we eatin?</div>
+
+    <div class="dessert-selection">
+      <div class="dessert-item">
+        <img src="desserts/milktea.jpeg" alt="milktea" />
+        <label
+          ><input type="checkbox" name="dessert" value="milktea" />Milktea</label
+        >
+      </div>
+      <div class="dessert-item">
+        <img src="desserts/chocolates.jpeg" alt="chocolates" />
+        <label
+          ><input type="checkbox" name="dessert" value="chocolates" /> Chocolates</label
+        >
+      </div>
+      <div class="dessert-item">
+        <img src="desserts/cookies.jpg" alt="cookies" />
+        <label><input type="checkbox" name="dessert" value="cookies" />cookies</label>
+      </div>
+      <div class="dessert-item">
+        <img src="desserts/snacks.jpeg" alt="snacks" />
+        <label
+          ><input type="checkbox" name="dessert" value="snacks" />Snacks</label
+        >
+      </div>
+      <div class="dessert-item">
+        <img src="desserts/donuts.jpeg" alt="donuts" />
+        <label
+          ><input type="checkbox" name="dessert" value="donuts" />Donuts</label
+        >
+      </div>
+      <div class="dessert-item">
+        <img src="desserts/icecream.jpg" alt="icecream" />
+        <label
+          ><input type="checkbox" name="dessert" value="Ice Cream" />
+          Ice Cream</label
+        >
+      </div>
+    </div>
+    <button class="button" onclick="location.href='activities.html'">
+      Continue UwU
+    </button>
+    <script>
+      document.querySelector(".button").addEventListener("click", function () {
+        let selectedDesserts = [];
+        document.querySelectorAll('input[name="dessert"]:checked').forEach((item) => {
+          selectedDesserts.push(item.value);
+        });
+        localStorage.setItem("selectedDesserts", JSON.stringify(selectedDesserts));
+      });
+    </script>
+  </body>
+</html>
